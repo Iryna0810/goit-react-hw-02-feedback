@@ -1,0 +1,72 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 30 px;
+justify-content: center;
+color: #fff;
+background-color: rgb(88, 88, 237);
+margin: 0 auto;
+}
+.counter__controls{
+margin-bottom: 60px;
+}
+.container_stat {
+display: flex;
+gap: 10px;
+justify-content: center;
+margin: 30px;
+}
+.tytle_feedback {
+    text-align: center;
+    padding: 20px;
+}
+.tytle_statistick {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.button {
+display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid #131468;
+    border-radius: 8px;
+    background: #3537ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3537ff), to(#131468));
+    background: -moz-linear-gradient(top, #3537ff, #131468);
+    background: linear-gradient(to bottom, #3537ff, #131468);
+    -webkit-box-shadow: #4042ff 0px 0px 40px 0px;
+    -moz-box-shadow: #4042ff 0px 0px 40px 0px;
+    box-shadow: #4042ff 0px 0px 40px 0px;
+    text-shadow: #0b0b3a 1px 1px 1px;
+    font: normal normal bold 20px comic sans ms;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    border: 1px solid #151673;
+    background: #4042ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4042ff), to(#17187d));
+    background: -moz-linear-gradient(top, #4042ff, #17187d);
+    background: linear-gradient(to bottom, #4042ff, #17187d);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #131468;
+    background: -webkit-gradient(linear, left top, left bottom, from(#131468), to(#131468));
+    background: -moz-linear-gradient(top, #131468, #131468);
+    background: linear-gradient(to bottom, #131468, #131468);
+}
+.counter__controls{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    }
+
+
