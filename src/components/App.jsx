@@ -1,7 +1,8 @@
 import { Component } from "react";
-import { Counter } from "./Counter/Counter";
-import css from "./Counter/counter.module.css";
-import { Statistics } from "./Counter/Statistic";
+import { FeedbackOptions } from "./Feedback/Feedback";
+import { Statistic } from "./Statistic/Statistic";
+import { Title } from "./Title/Title";
+import css from "./feedback.module.css";
 
 
 
@@ -10,9 +11,8 @@ export class App extends Component {
         good: 0,
         neutral: 0,
         bad: 0,
-        // total: 0,
-        // positiveFeedback: 0,
   }
+
       handleIncrement = (event) => {
         const value = event.target.name;
         this.setState(prevState =>
@@ -20,41 +20,55 @@ export class App extends Component {
             [value]: prevState[value] + 1,
         }))
                 
-    }
+  }
+
+  total = () => {
+    const { good, bad, neutral } = this.state;
+    const total = good + bad + neutral;
+    return total;
+  }
+  
+  
+  positivePercentage = () => {
+    const { good, bad, neutral } = this.state;
+    const total = good + bad + neutral;
+    const pozPercentage = good / total * 100;
+    return pozPercentage;
+    
+  }
   
   render(){
   return(
     <div 
       style={{
-        height: '100vh',
         display: 'flex',
         flexDirection: "column",
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        // color: '#010101'
         color: '#fff',
         backgroundColor: 'rgb(88, 88, 237)',
-        width: '500px',
+        width: 'auto',
         height: 'auto',
         padding:'30px',
         margin: '0 auto',
         borderRadius: '10px',
       }}>
-      <Counter
-        onHandleIncrement={this.handleIncrement}
-        good={this.state.good}
-        neutral={this.state.neutral}
-        bad = {this.state.bad}
-      />
-      <h3 className={css.tytle_statistick}>Statistics</h3>
-      <Statistics
+      <Title
+        title="Please leave feedback"
+      >
+        <FeedbackOptions
+         onLeaveFeedback={this.handleIncrement}
+              />
+      
+      <Statistic
                 good={this.state.good}
                 neutral={this.state.neutral}
                 bad={this.state.bad}
-                // total={this.state.total}
-                // positiveFeedback = {this.state.positiveFeedback}
-            />
+                total={this.total}
+                positiveFeedback = {this.positivePercentage}
+        />
+        </Title>
     </div>
     )
     }

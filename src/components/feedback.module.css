@@ -1,34 +1,34 @@
 .container{
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 30 px;
-justify-content: center;
-color: #fff;
-background-color: rgb(88, 88, 237);
-margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30 px;
+  justify-content: center;
+  color: #fff;
+  background-color: rgb(88, 88, 237);
+  margin: 0 auto;
 }
-.counter__controls{
-margin-bottom: 60px;
+.counter__controls{ 
+    margin-bottom: 60  px;
 }
 .container_stat {
-display: flex;
-gap: 10px;
-justify-content: center;
-margin: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px;
 }
 .tytle_feedback {
     text-align: center;
     padding: 20px;
 }
-.tytle_statistick {
-    align-items: center;
+.tytle_statistic {
+    display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 20 px;
 }
 
 .button {
-display: inline-block;
+    display: inline-block;
     text-align: center;
     vertical-align: middle;
     padding: 12px 24px;
