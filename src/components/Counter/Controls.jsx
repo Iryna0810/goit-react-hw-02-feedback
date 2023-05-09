@@ -3,7 +3,7 @@ import css from "./counter.module.css"
 
 
 
-const Controls = ({onIncrement}) => (
+const Controls = ({onIncrement,  onCountPositiveFeedbackPercentage}) => (
     // const { good, neutral, bad } = state;
     <div className={css.counter__controls}>
         <button type="button" name="good" className={css.button} onClick={onIncrement}>Good</button>

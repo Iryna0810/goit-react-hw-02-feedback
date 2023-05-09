@@ -1,32 +1,23 @@
 import React, { Component } from "react";
-import Controls from "./Controls";
+// import Controls from "./Controls";
 import css from './counter.module.css'
-import Statistick from "./Statistic";
+
 
 
 export class Counter extends Component {
 
     state = {
-        good: 0,
-        neutral: 0,
-        bad: 0,
+        // good: 0,
+        // neutral: 0,
+        // bad: 0,
         total: 0,
         positiveFeedback: 0,
     };
     
-    handleIncrement = (event) => {
-        const value = event.target.name;
-        this.setState(prevState =>
-        ({
-            [value]: prevState[value] + 1,
-        }))
-        
-        this.countTotalFeedback();    
-        this.countPositiveFeedbackPercentage();
-    }
+
  
     countTotalFeedback = () => {
-        const { good, neutral, bad } = this.state;
+        const {good, neutral, bad } = this.state;
         this.setState(() => ({
             total: 1 + good + neutral + bad,
         })
@@ -35,8 +26,12 @@ export class Counter extends Component {
 
     countPositiveFeedbackPercentage = () => {
         const { good, neutral, bad, total, positiveFeedback } = this.state;
+        
+        console.log(this.state);
+
+
         this.setState(() => ({
-            positiveFeedback:  good / total !== NaN ? good / total * 100 : 0,
+            positiveFeedback: good / total * 100,
         })
         
     )
@@ -45,26 +40,19 @@ export class Counter extends Component {
     
 
     render() {
-        //         this.countTotalFeedback();    
+        //         this.countTotalFeedback();
         // this.countPositiveFeedbackPercentage();
+        const { onHandleIncrement} = this.props;
+
     return (
-        <div className={css.container} >
-            <h2 className={css.tytle_feedback}>Please leave feedback</h2>
-            <Controls
-                onIncrement={this.handleIncrement}
-            
-            />
-            
-            <h3 className={css.tytle_statistick}>Statistics</h3>
-            <Statistick
-                good={this.state.good}
-                neutral={this.state.neutral}
-                bad={this.state.bad}
-                total={this.state.total}
-                positiveFeedback = {this.state.positiveFeedback}
-            />
-       
+    <div className={css.container} >
+        <h2 className={css.tytle_feedback}>Please leave feedback</h2>
+        <div className={css.counter__controls}>
+        <button type="button" name="good" className={css.button} onClick={onHandleIncrement}>Good</button>
+        <button type="button" name="neutral" className={css.button} onClick={onHandleIncrement}>Neutral</button>
+        <button type="button" name="bad" className={css.button} onClick={onHandleIncrement}>Bad</button>
         </div>
+    </div>
     )   
 }
 };
