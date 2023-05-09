@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import css from "../feedback.module.css"
-import { Notification } from "./Notisication";
+import { Notification } from "./Notification";
+import PropTypes from 'prop-types';
 
 
 export class Statistic extends Component {
@@ -31,4 +32,14 @@ export class Statistic extends Component {
                 
         
         )
-    }}
+    }
+}
+    
+Statistic.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.func,
+    positiveFeedback: PropTypes.func,
+
+}

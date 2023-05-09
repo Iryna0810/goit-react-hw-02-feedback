@@ -2,7 +2,6 @@ import { Component } from "react";
 import { FeedbackOptions } from "./Feedback/Feedback";
 import { Statistic } from "./Statistic/Statistic";
 import { Title } from "./Title/Title";
-import css from "./feedback.module.css";
 
 
 
@@ -71,5 +70,5 @@ export class App extends Component {
         </Title>
     </div>
     )
-    }
+  }
 };

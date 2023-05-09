@@ -1,5 +1,6 @@
 import React from "react";
-import css from "../feedback.module.css"
+import css from "../feedback.module.css";
+import PropTypes from 'prop-types';
 
  export const FeedbackOptions = ({onLeaveFeedback}) => (
     <div className={css.counter__controls}>
@@ -8,4 +9,6 @@ import css from "../feedback.module.css"
         <button type="button" name="bad" className={css.button} onClick={onLeaveFeedback}>Bad</button>
     </div>
 );
+
+FeedbackOptions.propTypes ={ onLeaveFeedback: PropTypes.func}
 
