@@ -58,6 +58,7 @@ export class App extends Component {
       >
         <FeedbackOptions
          onLeaveFeedback={this.handleIncrement}
+         options = { ['good', 'bad', 'neutral' ]}
               />
       
       <Statistic

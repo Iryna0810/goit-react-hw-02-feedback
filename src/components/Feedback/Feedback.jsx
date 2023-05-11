@@ -2,13 +2,13 @@ import React from "react";
 import css from "../feedback.module.css";
 import PropTypes from 'prop-types';
 
- export const FeedbackOptions = ({onLeaveFeedback}) => (
-    <div className={css.counter__controls}>
-        <button type="button" name="good" className={css.button} onClick={onLeaveFeedback}>Good</button>
-        <button type="button" name="neutral" className={css.button} onClick={onLeaveFeedback}>Neutral</button>
-        <button type="button" name="bad" className={css.button} onClick={onLeaveFeedback}>Bad</button>
+ export const FeedbackOptions = ({onLeaveFeedback, options}) => (
+     <div className={css.counter__controls}>
+         {options.map(option => <button type="button" name={option} className={css.button} onClick={onLeaveFeedback}>{option}</button>)}
     </div>
 );
 
-FeedbackOptions.propTypes ={ onLeaveFeedback: PropTypes.func}
+FeedbackOptions.propTypes = { onLeaveFeedback: PropTypes.func };
+FeedbackOptions.propTypes = { options: PropTypes.func };
+
 
