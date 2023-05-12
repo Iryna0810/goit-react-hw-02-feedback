@@ -47,7 +47,7 @@ export class App extends Component {
         fontSize: 40,
         color: '#fff',
         backgroundColor: 'rgb(88, 88, 237)',
-        width: 'auto',
+        width: '500px',
         height: 'auto',
         padding:'30px',
         margin: '0 auto',
